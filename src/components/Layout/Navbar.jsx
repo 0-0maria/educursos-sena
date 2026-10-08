@@ -8,7 +8,6 @@ export default function Navbar({ favoritosCount, usuarioLogueado, onLogout }) {
       <Link to="/mi-proyecto" className="text-slate-600 hover:text-sky-600 font-medium transition">Mi Proyecto</Link>
       <Link to="/cursos" className="text-slate-600 hover:text-sky-600 font-medium transition">Cursos</Link>
       
-      {/* Icono de Favoritos con contador */}
       <Link to="/favoritos" className="relative text-slate-600 hover:text-rose-500 transition" title="Mis Favoritos">
         <Heart size={24} />
         {favoritosCount > 0 && (
@@ -31,8 +30,8 @@ export default function Navbar({ favoritosCount, usuarioLogueado, onLogout }) {
           </button>
         </div>
       ) : (
-        <Link to="/login" className="bg-sky-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-sky-700 transition">
-          Login
+        <Link to="/cursos" className="bg-sky-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-sky-700 transition">
+          Cursos
         </Link>
       )}
     </nav>
