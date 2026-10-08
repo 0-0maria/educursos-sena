@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Heart } from "lucide-react";
 
-export default function Navbar({ favoritosCount, usuarioLogueado, onLogout }) {
+export default function Navbar({ favoritosCount }) {
   return (
     <nav className="flex items-center gap-6">
       <Link to="/" className="text-slate-600 hover:text-sky-600 font-medium transition">Inicio</Link>
@@ -16,24 +16,6 @@ export default function Navbar({ favoritosCount, usuarioLogueado, onLogout }) {
           </span>
         )}
       </Link>
-
-      {usuarioLogueado ? (
-        <div className="flex items-center gap-4">
-          <Link to="/perfil" className="text-sm font-semibold text-sky-600 bg-sky-50 px-3 py-1.5 rounded-lg">
-            Perfil: {usuarioLogueado.correo}
-          </Link>
-          <button 
-            onClick={onLogout}
-            className="text-sm bg-rose-50 text-rose-600 px-3 py-1.5 rounded-lg font-semibold hover:bg-rose-100 transition"
-          >
-            Cerrar sesión
-          </button>
-        </div>
-      ) : (
-        <Link to="/cursos" className="bg-sky-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-sky-700 transition">
-          Ver Catálogo
-        </Link>
-      )}
     </nav>
   );
 }
