@@ -15,6 +15,7 @@ export function useCursos() {
         
         const listaCursos = data.modules || data.courses || data.products || [];
         setCursos(listaCursos.slice(0, 30));
+      } catch (err) {
         setError(err.message);
       } finally {
         setCargando(false);
