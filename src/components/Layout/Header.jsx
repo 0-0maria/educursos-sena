@@ -1,19 +1,21 @@
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
+import Login from "../Auth/Login";
 
-export default function Header({ favoritosCount, usuarioLogueado, onLogout }) {
+function Header() {
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2">
-          <span className="text-2xl font-black text-sky-600">EduCursos</span>
+    <header className="flex items-center justify-between px-6 py-4 bg-white shadow-sm">
+      <div className="logo">
+        <Link to="/">
+          <h2 className="text-xl font-bold text-sky-600">EduCursos</h2>
         </Link>
-        <Navbar 
-          favoritosCount={favoritosCount} 
-          usuarioLogueado={usuarioLogueado} 
-          onLogout={onLogout} 
-        />
+      </div>
+      <Navbar />
+      <div className="login-container">
+        <Login />
       </div>
     </header>
   );
 }
+
+export default Header;
